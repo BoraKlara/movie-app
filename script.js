@@ -4,4 +4,13 @@ const API_URL =
 const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
 
 const SEARCH_URL =
-  "https://api.themoviedb.org/3/discover/movie?api_key=263eeb246a0c04778be8543d7bc70709&query=''";
+  'https://api.themoviedb.org/3/discover/movie?api_key=263eeb246a0c04778be8543d7bc70709&query="';
+
+getMovies(API_URL);
+
+async function getMovies(url) {
+  const res = await fetch(url);
+  const data = await res.json();
+
+  console.log(data.results);
+}
