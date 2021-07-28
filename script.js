@@ -24,6 +24,10 @@ form.addEventListener("submit", (e) => {
   const searchTerm = search.nodeValue;
 
   if (searchTerm && searchTerm !== "") {
-    getMovies(SEARCH_URL);
+    getMovies(SEARCH_API + searchTerm);
+
+    search.value = "";
+  } else {
+    window.location.reload();
   }
 });
